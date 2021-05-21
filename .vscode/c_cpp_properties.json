@@ -1,0 +1,14 @@
+{
+	"configurations": [
+		{
+			"name": "Default",
+			"includePath": [
+				"${default}",
+				"${workspaceFolder}/**",
+                "~/.conan/data/**"
+			],
+			"defines": []
+		}
+	],
+	"version": 4
+}
