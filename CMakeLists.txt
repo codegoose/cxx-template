@@ -13,6 +13,11 @@ add_definitions("-std=c++17")
 include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
 conan_basic_setup()
 
-add_executable(app main.cxx app.rc)
+add_executable(
+    app
+    src/app.cxx
+    src/cg/os/win.cxx
+    src/rc/app.rc
+)
 
 target_link_libraries(app ${CONAN_LIBS})

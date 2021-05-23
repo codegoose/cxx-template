@@ -74,6 +74,17 @@ $ conan profile new default --detect
 $ conan profile update settings.compiler.libcxx=libstdc++11 default
 ```
 
+Explicitly specify `CC` and `CXX` to resolve some potential build issues:
+
+```
+$ conan profile update env.CONAN_CMAKE_FIND_ROOT_PATH=x86_64-w64-mingw32 default
+$ conan profile update env.CC=x86_64-w64-mingw32-gcc default
+$ conan profile update env.CXX=x86_64-w64-mingw32-g++ default
+```
+
+* https://github.com/conan-io/conan/issues/6032 *Compiling OpenSSL with MinGW on Windows*
+* https://github.com/openssl/openssl/issues/8268 *Windows MinGW(x86/x86_64) building DSO not possible anymore*
+
 # Prepare build folder
 
 From the project root directory:
@@ -83,6 +94,12 @@ $ mkdir build
 $ cd build
 $ conan install .. --build=missing
 $ cmake -G Ninja ..
+```
+
+Your `.conan` folder will likely become huge at some point as it'll hang on to build tools, sources and such in case they're needed later. You can reduce the size of this folder by running this cleanup command:
+
+```
+conan remove * -b -s -f
 ```
 
 # Build/rebuild

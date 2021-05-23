@@ -1,5 +1,7 @@
 [requires]
 spdlog/1.8.5
+libcurl/7.75.0
 glfw/3.3.4
+glew/2.2.0
 [generators]
 cmake

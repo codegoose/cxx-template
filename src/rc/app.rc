@@ -1,6 +1,6 @@
 #include <windows.h>
 
-101 DATA "app-rc.zip"
+101 DATA "app.zip"
 
 LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
 GLFW_ICON  ICON ".\\app.ico"

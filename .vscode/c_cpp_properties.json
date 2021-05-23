@@ -7,7 +7,7 @@
 				"${workspaceFolder}/**",
                 "~/.conan/data/**"
 			],
-			"defines": []
+			"defines": [ "SPDLOG_FMT_EXTERNAL" ]
 		}
 	],
 	"version": 4
