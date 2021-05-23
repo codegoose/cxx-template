@@ -16,6 +16,7 @@ conan_basic_setup()
 add_executable(
     app
     src/app.cxx
+    src/cg/init.cxx
     src/cg/os/win.cxx
     src/rc/app.rc
 )
